@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
+import { Provider } from "react-redux"
+import { configureStore } from "@reduxjs/toolkit"
+import rootReducer from "@state"
 import reportWebVitals from './reportWebVitals';
 
+const store = configureStore({
+  reducer: rootReducer
+})
+
+// Development mode will consume mocked API (./mocks/*)
+if (process.env.NODE_ENV === 'development') {
+  const { worker } = require('./mocks/browser')
+  worker.start()
+}
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 

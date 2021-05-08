@@ -1,7 +1,28 @@
+import { useEffect } from "react"
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { useAppState } from "@hooks"
+import { getPlayersList } from "./state/players/actions"
 
-function App() {
+const App = () => {
+
+  const [
+    ,
+    actions
+  ] = useAppState(state => state, { getPlayersList })
+
+  useEffect(() => {
+
+    const getPlayers = async () => {
+      await actions.getPlayersList({
+        page: 1,
+        per_page: 20,
+      })
+    }
+
+    getPlayers() 
+  }, [actions])
+
   return (
     <div className="App">
       <header className="App-header">
