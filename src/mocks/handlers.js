@@ -29,9 +29,11 @@ export const handlers = [
       )
     } else {
       data = listPlayers.slice(
-        isFirstPage ? 0 : (page * per_page), 
-        isFirstPage ? per_page : (page * per_page + per_page)
+        isFirstPage ? 0 : ((page * per_page) - per_page), 
+        isFirstPage ? per_page : ((page * per_page))
       )
+      console.log(listPlayers.slice(per_page, ((page * per_page))))
+      console.log(listPlayers[(page * per_page)-1])
     }
 
     const total_pages = !!search 

@@ -2,7 +2,9 @@ import { useEffect } from "react"
 import logo from './logo.svg';
 import './App.scss';
 import { useAppState } from "@hooks"
-import { getPlayersList } from "./state/players/actions"
+import { getPlayersList } from "@state/players/actions"
+import PlayersPage from "@pages/PlayersPage"
+import { Layout, Header } from "antd"
 
 const App = () => {
 
@@ -16,7 +18,8 @@ const App = () => {
     const getPlayers = async () => {
       await actions.getPlayersList({
         page: 1,
-        per_page: 20,
+        per_page: 50,
+        isSearch: false,
       })
     }
 
@@ -24,22 +27,9 @@ const App = () => {
   }, [actions])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout style={{ maxHeight: "100vh"}}>
+      <PlayersPage />
+    </Layout>
   );
 }
 
