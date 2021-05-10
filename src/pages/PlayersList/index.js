@@ -40,9 +40,6 @@ export const PlayersList = ({ search }) => {
                   Team
                 </th>
                 <th>
-                  Position
-                </th>
-                <th>
                   Division
                 </th>
               </tr>
@@ -74,9 +71,6 @@ export const PlayersList = ({ search }) => {
                     </td>
                     <td className="blue--item">
                       { player.team.name }
-                    </td>
-                    <td>
-                      { player.position }
                     </td>
                     <td>
                       { player.team.division }

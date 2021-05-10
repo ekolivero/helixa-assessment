@@ -99,10 +99,10 @@ const App = () => {
     <Layout style={{ height: '100vh' }}>
       <Header handleChange={handleSearch}/>
       <Row>
-        <Col md={12} style={{ height: 'calc(100vh - 92px)'}}>
+        <Col md={9} style={{ height: 'calc(100vh - 92px)'}}>
           <PlayersList players={players} serach={serachValue} />
         </Col>
-        <Col md={12}>
+        <Col md={15}>
           <Route path="/player/:id">
             <PlayerDetail />
           </Route>
