@@ -22,7 +22,6 @@ const PlayerDetail = () => {
 
   const [
     stats,
-    _
   ] = useAppState(state => state.stats.stats, {})
  
   const currentYear = (new Date().getFullYear())
@@ -50,7 +49,7 @@ const PlayerDetail = () => {
 
     getSeasonStats()
     getPlayerImage()
-  }, [playerId])
+  }, [playerId, actions, lastFiveYearsArray, player?.last_name, player?.first_name])
 
   if (!player) return <Empty />
 
