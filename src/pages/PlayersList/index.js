@@ -53,8 +53,6 @@ export const PlayersList = ({ search }) => {
               page: next_page, 
               per_page: per_page, 
               search: search, 
-              isSearch: !!search ? true : false ,
-              keepSearching: isSearch && !!search
             })}
             hasMore={hasMore}
             loader={<Spin />}

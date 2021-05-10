@@ -65,7 +65,7 @@ const App = () => {
       <Header handleChange={handleSearch}/>
       <Row>
         <Col md={9} style={{ height: 'calc(100vh - 92px)'}}>
-          <PlayersList players={players} serach={serachValue} />
+          <PlayersList players={players} search={serachValue} />
         </Col>
         <Col md={15}>
           <Route path="/player/:id">
