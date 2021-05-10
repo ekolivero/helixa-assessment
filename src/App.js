@@ -12,6 +12,7 @@ import { Empty } from "@components/Empty"
 
 const { Title } = Typography
 
+window.console.log('%c%s','color: green; background: yellow; font-size: 24px;','Helixa Assessment, Erik Olivero!')
 
 const App = () => {
 
