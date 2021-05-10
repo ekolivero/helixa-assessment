@@ -11,7 +11,6 @@ export const PlayersList = ({ search }) => {
         hasMore,
         next_page,
         players,
-        isSearch,
         per_page
       }
     },

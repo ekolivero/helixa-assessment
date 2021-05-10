@@ -9,6 +9,7 @@ const initialState = {
   isSearch: false,
   loaded: false,
   per_page: 50,
+  search: "",
 }
 
 const playersReducer = createSlice({
@@ -21,13 +22,13 @@ const playersReducer = createSlice({
       state.loaded = false
     },
     [getPlayersList.fulfilled]: (state, { payload }) => {
-      const { hasMore, next_page, players, isSearch } = payload
+      const { hasMore, next_page, players, search } = payload
       state.isLoading = false
       state.hasMore = hasMore
       state.next_page = next_page
-      state.players = !isSearch ? state.players.concat(players) : players
+      state.players = ((!search && !state.search && !search) || (state.search === search)) ? state.players.concat(players) : players
       state.loaded = true
-      state.isSearch = isSearch
+      state.search = search
     }
   }
 })

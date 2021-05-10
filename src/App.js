@@ -37,7 +37,6 @@ const App = () => {
       page: 1,
       per_page: per_page,
       search: e.target.value,
-      isSearch: true
     })
   }
 
@@ -47,7 +46,6 @@ const App = () => {
       await actions.getPlayersList({
         page: 1,
         per_page: per_page,
-        isSearch: false
       })
     }
 
