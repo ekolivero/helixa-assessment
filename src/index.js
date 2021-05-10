@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import { Provider } from "react-redux"
+import {
+  BrowserRouter as Router
+} from "react-router-dom"
 import { configureStore } from "@reduxjs/toolkit"
 import rootReducer from "@state"
 import reportWebVitals from './reportWebVitals';
@@ -18,11 +21,13 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>,
+  <Router>
+    <Provider store={store}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </Provider>
+  </Router>,
   document.getElementById('root')
 );
 

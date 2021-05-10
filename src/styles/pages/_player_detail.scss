@@ -1,0 +1,59 @@
+.container__detail {
+  box-sizing: border-box;
+  margin: 50px 60px;
+  max-height: 100%;
+
+  &--description {
+    display: flex;
+    flex: 1;
+    height: 250px;
+    background-color: $bg--color;
+  }
+
+  &--image {
+    display: flex;
+    flex: 1;
+  }
+
+  &--player {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    &--name {
+      color: white;
+      font-weight: 800;
+      font-size: 4em;
+      line-height: 2em;
+    }
+
+    &--last-name {
+      color: white;
+      font-weight: 300;
+      font-size: 2.2em;
+      line-height: 2em;
+    }
+  }
+
+  &--no-image {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  &--last-games {
+    margin-top: 20px;
+  }
+}
+
+.stats--table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: white;
+}
