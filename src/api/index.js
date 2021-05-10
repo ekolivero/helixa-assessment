@@ -1,9 +1,14 @@
 
 import axios from "axios"
 
-const client = axios.create({
+export const client = axios.create({
   timeout: 1000,
   baseURL: "https://www.balldontlie.io",
 })
 
-export default client;
+
+
+export const imageClient = axios.create({
+  timeout: 3000, 
+  baseURL: "https://nba-players.herokuapp.com"
+})

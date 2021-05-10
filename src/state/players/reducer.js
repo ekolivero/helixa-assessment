@@ -7,7 +7,8 @@ const initialState = {
   next_page: null,
   players: [],
   isSearch: false,
-  loaded: false
+  loaded: false,
+  per_page: 50,
 }
 
 const playersReducer = createSlice({
@@ -16,8 +17,6 @@ const playersReducer = createSlice({
   reducers: {},
   extraReducers: {
     [getPlayersList.pending]: (state, { meta }) => {
-      const { arg: { isSearch, keepSearching }} = meta
-      state.players = isSearch && !keepSearching ? [] : state.players
       state.isLoading = true
       state.loaded = false
     },
@@ -26,7 +25,7 @@ const playersReducer = createSlice({
       state.isLoading = false
       state.hasMore = hasMore
       state.next_page = next_page
-      state.players = state.players.concat(players)
+      state.players = !isSearch ? state.players.concat(players) : players
       state.loaded = true
       state.isSearch = isSearch
     }

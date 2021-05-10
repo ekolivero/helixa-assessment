@@ -32,8 +32,6 @@ export const handlers = [
         isFirstPage ? 0 : ((page * per_page) - per_page), 
         isFirstPage ? per_page : ((page * per_page))
       )
-      console.log(listPlayers.slice(per_page, ((page * per_page))))
-      console.log(listPlayers[(page * per_page)-1])
     }
 
     const total_pages = !!search 
@@ -64,8 +62,8 @@ export const handlers = [
   // In this case for the development I'll keep just one mocked data
   rest.get(`${basePath}/api/v1/season_averages`, (req, res, ctx) => {
 
-    //const season = req.url.searchParams.get('season')
-    //const player_id = req.url.searchParams.get('player_ids[]')
+    const season = req.url.searchParams.get('season')
+    const player_id = req.url.searchParams.get('player_ids[]')
 
     return res(
       ctx.status(200),
@@ -73,8 +71,8 @@ export const handlers = [
         "data": [
           {
             "games_played": 31,
-            "player_id": 1,
-            "season": 2018,
+            "player_id": player_id,
+            "season": season,
             "min": "18:50",
             "fgm": 1.74,
             "fga": 5.0,
