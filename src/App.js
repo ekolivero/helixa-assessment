@@ -52,7 +52,8 @@ const App = () => {
 
     getPlayers()
 
-  }, [actions, history, per_page])
+    // eslint-disable-next-line
+  }, [])
 
   if (size.width < 1000) {
     return <Title level={3}> Try again on wider screens </Title>

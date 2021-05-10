@@ -49,7 +49,9 @@ const PlayerDetail = () => {
 
     getSeasonStats()
     getPlayerImage()
-  }, [playerId, actions, lastFiveYearsArray, player?.last_name, player?.first_name])
+    
+    // eslint-disable-next-line
+  }, [playerId])
 
   if (!player) return <Empty />
 
